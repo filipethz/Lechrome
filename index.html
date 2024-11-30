@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Compras</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Logo e título -->
+        <div class="logo">
+            <img src="logo.png" alt="Logo da Lechrome"> <!-- Substitua pelo caminho da sua imagem -->
+            <h1>Lechrome</h1>
+        </div>
+
+        <!-- Formulário de criação de compra -->
+        <form id="purchaseForm">
+            <label for="data">Data:</label>
+            <input type="date" id="data" name="data" required>
+            
+            <label for="cliente">Cliente:</label>
+            <input type="text" id="cliente" name="cliente" required>
+
+            <label for="dados">Dados:</label>
+            <input type="text" id="dados" name="dados" required>
+
+            <label for="nome_produto">Produto:</label>
+            <input type="text" id="nome_produto" name="nome_produto" required>
+
+            <label for="valor">Valor:</label>
+            <input type="text" id="valor" name="valor" required>
+
+            <label for="pagamento">Método de Pagamento:</label>
+            <select id="pagamento" name="pagamento" required>
+                <option value="">Selecione</option>
+                <option value="Crédito">Crédito</option>
+                <option value="Débito">Débito</option>
+                <option value="Pix">Pix</option>
+                <option value="Dinheiro">Dinheiro</option>
+            </select>
+
+            <label for="obs">Observação:</label>
+            <textarea id="obs" name="obs"></textarea>
+
+            <button type="submit">Cadastrar Compra</button>
+        </form>
+
+        <hr>
+
+        <!-- Link para navegar para a página de exibição -->
+        <a href="list.html">Ver Compras Cadastradas</a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
