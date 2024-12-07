@@ -1,5 +1,5 @@
 // URL do backend (assumindo que o backend esteja rodando em localhost na porta 8080)
-const apiUrl = 'http://localhost:8080';
+const apiUrl = 'https://lecback-production.up.railway.app/';
 
 // Função para enviar uma nova compra
 document.getElementById('purchaseForm')?.addEventListener('submit', async (event) => {
