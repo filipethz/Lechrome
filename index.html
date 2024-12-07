@@ -3,22 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Compras</title>
+    <title>Lechrome - Cadastro de Compras</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <!-- Logo e título -->
-        <div class="logo">
-            <img src="logo.png" alt="Logo da Lechrome"> <!-- Substitua pelo caminho da sua imagem -->
-            <h1>Lechrome</h1>
-        </div>
+        <h1>Lechrome</h1>
+        <img src="logo.png" alt="Logo da Lechrome" class="logo">
 
         <!-- Formulário de criação de compra -->
         <form id="purchaseForm">
             <label for="data">Data:</label>
             <input type="date" id="data" name="data" required>
-            
+
             <label for="cliente">Cliente:</label>
             <input type="text" id="cliente" name="cliente" required>
 
@@ -33,11 +30,10 @@
 
             <label for="pagamento">Método de Pagamento:</label>
             <select id="pagamento" name="pagamento" required>
-                <option value="">Selecione</option>
-                <option value="Crédito">Crédito</option>
-                <option value="Débito">Débito</option>
-                <option value="Pix">Pix</option>
-                <option value="Dinheiro">Dinheiro</option>
+                <option value="credito">Crédito</option>
+                <option value="debito">Débito</option>
+                <option value="pix">Pix</option>
+                <option value="dinheiro">Dinheiro</option>
             </select>
 
             <label for="obs">Observação:</label>

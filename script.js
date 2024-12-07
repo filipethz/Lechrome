@@ -5,8 +5,9 @@ const apiUrl = 'http://localhost:8080';
 document.getElementById('purchaseForm')?.addEventListener('submit', async (event) => {
     event.preventDefault();
 
+    // Pegando os dados do formulário
     const purchaseData = {
-        data: document.getElementById('data').value,
+        data: document.getElementById('data').value.split("T")[0],  // Pegando apenas a data (sem a hora)
         cliente: document.getElementById('cliente').value,
         dados: document.getElementById('dados').value,
         nome_produto: document.getElementById('nome_produto').value,
@@ -36,40 +37,3 @@ document.getElementById('purchaseForm')?.addEventListener('submit', async (event
         alert('Erro de comunicação com o servidor.');
     }
 });
-
-// Função para carregar as compras
-async function loadPurchases() {
-    try {
-        const response = await fetch(`${apiUrl}/purchases`);
-        const purchases = await response.json();
-        
-        const purchasesList = document.getElementById('purchasesList');
-        purchasesList.innerHTML = ''; // Limpa a lista antes de renderizar novamente
-
-        if (purchases.length === 0) {
-            purchasesList.innerHTML = '<p>Nenhuma compra registrada ainda.</p>';
-        }
-
-        purchases.forEach((purchase) => {
-            const purchaseElement = document.createElement('div');
-            purchaseElement.classList.add('purchase-item');
-            purchaseElement.innerHTML = `
-                <p><strong>Cliente:</strong> ${purchase.cliente}</p>
-                <p><strong>Dados:</strong> ${purchase.dados}</p>
-                <p><strong>Produto:</strong> ${purchase.nome_produto}</p>
-                <p><strong>Valor:</strong> ${purchase.valor}</p>
-                <p><strong>Pagamento:</strong> ${purchase.pagamento}</p>
-                <p><strong>Observação:</strong> ${purchase.obs}</p>
-                <p><strong>Data:</strong> ${new Date(purchase.data).toLocaleDateString()}</p>
-            `;
-            purchasesList.appendChild(purchaseElement);
-        });
-    } catch (error) {
-        console.error('Erro ao carregar compras', error);
-    }
-}
-
-// Carregar as compras ao carregar a página de exibição (list.html)
-if (document.getElementById('purchasesList')) {
-    loadPurchases();
-}
