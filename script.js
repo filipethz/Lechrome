@@ -11,7 +11,7 @@ document.getElementById('purchaseForm')?.addEventListener('submit', async (event
         cliente: document.getElementById('cliente').value,
         dados: document.getElementById('dados').value,
         nome_produto: document.getElementById('nome_produto').value,
-        valor: document.getElementById('valor').value,
+        valor: parseFloat(document.getElementById('valor').value), // Convertendo para número
         pagamento: document.getElementById('pagamento').value,
         obs: document.getElementById('obs').value,
     };
