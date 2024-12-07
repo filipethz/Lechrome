@@ -1,6 +1,6 @@
 async function fetchPurchases() {
     try {
-        const response = await fetch('http://localhost:8080/purchases'); // URL do backend
+        const response = await fetch('https://lecback-production.up.railway.app/purchases'); // URL do backend
         if (!response.ok) {
             throw new Error('Erro ao carregar as compras');
         }
@@ -71,7 +71,7 @@ function editPurchase(id) {
                     obs: document.getElementById('editObs').value,
                 };
 
-                const response = await fetch(`http://localhost:8080/purchase/${id}`, { // URL do backend
+                const response = await fetch(`https://lecback-production.up.railway.app/purchase/${id}`, { // URL do backend
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json'
@@ -96,7 +96,7 @@ function editPurchase(id) {
 }
 
 async function deletePurchase(id) {
-    const response = await fetch(`http://localhost:8080/purchase/${id}`, { // URL do backend
+    const response = await fetch(`https://lecback-production.up.railway.app/purchase/${id}`, { // URL do backend
         method: 'DELETE'
     });
 
